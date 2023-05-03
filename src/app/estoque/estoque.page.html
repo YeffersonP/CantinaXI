@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Estoque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Estoque</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Assados</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <!-- Porção de repetição -->
+              <ion-item *ngFor="let produto of listaProdutos">
+                <ion-thumbnail slot="start">
+                  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                </ion-thumbnail>
+                <div>
+                    <ion-card-subtitle color="dark">
+                      <span class="bold"> {{produto.nome}} </span>
+                      <p class="info-medium">{{produto.qtdestoque}} unidades</p>
+                    </ion-card-subtitle> 
+                </div>
+                <ion-buttons slot="end">
+                  <ion-button (click)="openModal(produto.id)">
+                    <ion-icon slot="icon-only" name="information-circle" color="secondary"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-item>
+              <!-- // -->
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-modal *ngFor="let produto of listaProdutos" trigger="display-product-{{produto.id}}" (willDismiss)="onWillDismiss($event)" id={{produto.id}}>
+    <ng-template>
+      
+    </ng-template>
+  </ion-modal> -->
+  
+
+</ion-content>
