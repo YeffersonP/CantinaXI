@@ -13,16 +13,16 @@
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12" *ngFor="let categoria of listaCategorias">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Assados</ion-card-title>
+            <ion-card-title>{{ categoria.nome }}s</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-list>
               <!-- Porção de repetição -->
               <ng-container *ngFor="let produto of listaProdutos">
-              <ion-item *ngIf="produto.categoria === 'Assados'">
+              <ion-item *ngIf="produto.categoria === categoria.nome">
                 <ion-thumbnail slot="start">
                   <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
                 </ion-thumbnail>
@@ -30,37 +30,6 @@
                     <ion-card-subtitle color="dark">
                       <span class="bold"> {{produto.nome}} </span>
                       <p class="info-medium">{{produto.qtdestoque}} unidades</p>
-                      <p class="info-medium">{{produto.categoria}}</p>
-                    </ion-card-subtitle> 
-                </div>
-                <ion-buttons slot="end">
-                  <ion-button (click)="openModal(produto.id)">
-                    <ion-icon slot="icon-only" name="information-circle" color="secondary"></ion-icon>
-                  </ion-button>
-                </ion-buttons>
-              </ion-item>
-            </ng-container>
-              <!-- // -->
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Bebidas</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list>
-              <!-- Porção de repetição -->
-              <ng-container *ngFor="let produto of listaProdutos">
-              <ion-item *ngIf="produto.categoria === 'Bebidas'">
-                <ion-thumbnail slot="start">
-                  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                </ion-thumbnail>
-                <div>
-                    <ion-card-subtitle color="dark">
-                      <span class="bold"> {{produto.nome}} </span>
-                      <p class="info-medium">{{produto.qtdestoque}} unidades</p>
-                      <p class="info-medium">{{produto.categoria}}</p>
                     </ion-card-subtitle> 
                 </div>
                 <ion-buttons slot="end">

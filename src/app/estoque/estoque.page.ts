@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
-import { Produto, ProdutoService } from '../services/produto.service';
 
+//API
+import { Produto, ProdutoService } from '../services/produto.service';
+import { Categoria, CategoriaService } from '../services/categoria.service';
+
+//MODALS
 import { ModalController } from '@ionic/angular';
 import { ProdutoComponent } from '../modals/produto/produto.component';
 
@@ -15,9 +19,11 @@ import { ProdutoComponent } from '../modals/produto/produto.component';
 export class EstoquePage implements OnInit {
 
   public listaProdutos: Produto[] = [];
+  public listaCategorias: Categoria[] = [];
 
   constructor(
     private produtoService: ProdutoService,
+    private categoriaService: CategoriaService,
     private modalCtrl: ModalController
   ) { }
 
@@ -25,6 +31,12 @@ export class EstoquePage implements OnInit {
     this.produtoService.getProdutos().subscribe(
       (produtos) => {
         this.listaProdutos = produtos;
+      }
+    )
+
+    this.categoriaService.getCategorias().subscribe(
+      (categorias) => {
+        this.listaCategorias = categorias;
       }
     )
   }
