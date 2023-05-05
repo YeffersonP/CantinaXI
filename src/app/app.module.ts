@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ProdutoComponent } from './modals/produto/produto.component';
+import { CategoriaComponent } from './modals/categoria/categoria.component';
 
 @NgModule({
-  declarations: [AppComponent, ProdutoComponent],
+  declarations: [AppComponent, ProdutoComponent, CategoriaComponent],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
