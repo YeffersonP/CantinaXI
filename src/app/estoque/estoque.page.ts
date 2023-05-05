@@ -42,6 +42,7 @@ export class EstoquePage implements OnInit {
     const { data, role } = await modal.onWillDismiss();
   }
 
+
   // @ViewChild(IonModal) modal!: IonModal;
   // isModalOpen = false;
   

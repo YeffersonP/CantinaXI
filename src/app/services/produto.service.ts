@@ -9,7 +9,7 @@ export interface Produto{
   qtdestoque:     number,
   usuario:        string,
   fornecedor:     number,
-  categoria:      number
+  categoria:      string
 }
 
 @Injectable({
