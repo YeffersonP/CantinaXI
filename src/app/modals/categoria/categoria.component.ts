@@ -33,4 +33,8 @@ export class CategoriaComponent  implements OnInit {
     return this.modalCtrl.dismiss(null, 'cancel');
   }
 
+  addProduto(id: number) {
+    console.log(id)
+  }
+
 }
