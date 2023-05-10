@@ -10,7 +10,8 @@ export interface Produto{
   usuario:        string,
   fornecedor:     number,
   idcategoria:    number,
-  categoria:      string
+  categoria:      string,
+  imagem:         string
 }
 
 @Injectable({
